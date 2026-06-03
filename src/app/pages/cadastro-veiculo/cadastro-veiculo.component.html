@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Placa: </label>
+    <input formControlName="placa" />
+
+    <label>Marca: </label>
+    <input formControlName="marca" />
+
+    <label>Modelo: </label>
+    <input formControlName="modelo" />
+
+    <label>Ano: </label>
+    <input formControlName="ano" />
+
+    <label>Cliente ID: </label>
+    <input formControlName="clienteId" />
+
+    <button type="submit">Cadastrar</button>
+</form>

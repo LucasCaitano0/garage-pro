@@ -1,1 +1,12 @@
-<p>veiculos works!</p>
+<h1>Veículos Cadastrados</h1>
+
+<div class="lista-veiculos">
+    @for (veiculo of veiculos; track veiculo.id){
+        <div class="card-veiculo">
+            <h3> {{ veiculo.placa }} {{ veiculo.modelo }}</h3>
+            <p> {{ veiculo.marca }}</p>
+            <p> {{ veiculo.ano }}</p>
+            <a [routerLink]="['/veiculos', veiculo.id]">Ver detalhes</a>
+        </div>
+    }
+</div>

@@ -1,0 +1,43 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "nome": "Lucas OMelhor",
+      "telefone": "61999999999",
+      "email": "luscas@admin.com"
+    },
+    {
+      "id": "2",
+      "nome": "João Thebest",
+      "telefone": "61888888888",
+      "email": "joao@thebest.com"
+    }
+  ],
+  "veiculos": [
+    {
+      "id": "1",
+      "clienteId": 1,
+      "placa": "ABC-1234",
+      "marca": "Chevrolet",
+      "modelo": "Camaro",
+      "ano": 2026
+    },
+    {
+      "id": "2",
+      "clienteId": 2,
+      "placa": "XYZ-5678",
+      "marca": "Ford",
+      "modelo": "Mustang",
+      "ano": 2023
+    },
+    {
+      "placa": "JKD3956",
+      "marca": "Volkswagen",
+      "modelo": "Passat",
+      "ano": 2023,
+      "clienteId": 3,
+      "id": "r23smC0L7M4"
+    }
+  ],
+  "ordens": []
+}

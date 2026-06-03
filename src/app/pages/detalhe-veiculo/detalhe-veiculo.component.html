@@ -1,1 +1,12 @@
-<p>detalhe-veiculo works!</p>
+@if (veiculo){
+    <div class="container">
+        <h2>{{veiculo.marca}} {{veiculo.modelo}}</h2>
+        <p>Placa: {{veiculo.placa}}</p> 
+        <p>Ano: {{veiculo.ano}}</p>
+        <p>Cliente ID: {{ veiculo.clienteId }}</p>
+    </div>
+} @else {
+    <p>Carregando...</p>
+}
+
+    
