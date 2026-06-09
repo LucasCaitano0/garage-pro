@@ -12,13 +12,12 @@ import { Cliente } from '../../models/cliente.model';
 export class ClientesComponent implements OnInit {
   clientes: Cliente[] = [];
     
-  constructor(private clienteService: ClienteService){
+  constructor(private clienteService: ClienteService){}
     
-    ngOnIinit(): void {
+    ngOnInit(): void {
       this.clienteService.getClientes().subscribe((dados)=>{
         this.clientes = dados;
       })
     }
-  }
 }
 

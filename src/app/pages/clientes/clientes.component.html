@@ -1,1 +1,11 @@
-<p>clientes works!</p>
+<h1>Clientes cadastrados</h1>
+
+<div class="lista-clientes">
+    @for( cliente of clientes; track cliente.id){
+        <div class="card-clientes">
+            <h3> {{ cliente.nome }}</h3>
+            <p> {{cliente.email}}</p>
+            <p> {{cliente.telefone}}</p>
+        </div>
+    }
+</div>
