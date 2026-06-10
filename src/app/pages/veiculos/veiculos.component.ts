@@ -21,6 +21,14 @@ export class VeiculosComponent implements OnInit {
       })
     }
 
+  deletar(id: string) {
+    if (confirm('Tem certeza que deseja excluir este veículo?')){
+      this.veiculoService.deleteVeiculo(id).subscribe(() => {
+        this.veiculos = this.veiculos.filter(v => v.id !== id);
+      });
+    }
+  }
+
   
 }
 

@@ -7,6 +7,7 @@
             <p> {{ veiculo.marca }}</p>
             <p> {{ veiculo.ano }}</p>
             <a [routerLink]="['/veiculos', veiculo.id]">Ver detalhes</a>
+            <button (click)="deletar(veiculo.id)">Excluir</button>
         </div>
     }
 </div>

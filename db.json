@@ -35,15 +35,8 @@
       "marca": "Ford",
       "modelo": "Mustang",
       "ano": 2023
-    },
-    {
-      "placa": "JKD3956",
-      "marca": "Volkswagen",
-      "modelo": "Passat",
-      "ano": 2023,
-      "clienteId": 3,
-      "id": "r23smC0L7M4"
     }
   ],
-  "ordens": []
+  "ordens": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }

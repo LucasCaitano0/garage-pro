@@ -24,5 +24,9 @@ export class VeiculoService {
   getVeiculoPorId(id: string){
     return this.http.get<Veiculo>(`${this.apiUrl}/${id}`);
   }
+  
+  deleteVeiculo(id: string){
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 
 }
