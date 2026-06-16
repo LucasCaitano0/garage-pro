@@ -29,4 +29,8 @@ export class VeiculoService {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
+  updateVeiculo(id:string, veiculo: Veiculo){
+    return this.http.put<Veiculo>(`${this.apiUrl}/${id}`, veiculo);
+  }
+
 }

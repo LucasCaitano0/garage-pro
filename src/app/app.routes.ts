@@ -14,6 +14,7 @@ export const routes: Routes = [
     {path: 'veiculos', component: VeiculosComponent},
     {path: 'veiculos/novo', component: CadastroVeiculoComponent},
     {path: 'veiculos/:id', component: DetalheVeiculoComponent},
+    {path: 'veiculos/:id/editar', component: CadastroVeiculoComponent},
     {path: 'ordens', component: OrdensComponent},
     {path: 'ordens/nova', component: NovaOrdemComponent}
     

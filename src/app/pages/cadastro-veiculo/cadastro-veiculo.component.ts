@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Veiculo } from './../../models/veiculo.model';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { VeiculoService } from '../../services/veiculo.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-veiculo',
@@ -12,7 +14,8 @@ import { VeiculoService } from '../../services/veiculo.service';
 
 
 
-export class CadastroVeiculoComponent {
+export class CadastroVeiculoComponent implements OnInit {
+  idEdicao: string | null = null;
 
   form = new FormGroup({
     placa: new FormControl(''),
@@ -22,12 +25,32 @@ export class CadastroVeiculoComponent {
     clienteId: new FormControl('')
   });
 
-  constructor(private veiculoService: VeiculoService) { }
+  constructor(
+    private veiculoService: VeiculoService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void{
+    this.idEdicao = this.route.snapshot.paramMap.get('id');
+
+    if(this.idEdicao){
+      this.veiculoService.getVeiculoPorId(this.idEdicao).subscribe((veiculo) => {
+        this.form.patchValue({
+          placa: veiculo.placa,
+          marca: veiculo.marca,
+          modelo: veiculo.modelo,
+          ano: String(veiculo.ano),
+          clienteId: String(veiculo.clienteId)
+        });
+      });
+    }
+  }
 
   onSubmit(){
     const formValue = this.form.value;
 
-    const novoVeiculo = {
+    const veiculo = {
       placa: formValue.placa,
       marca: formValue.marca,
       modelo: formValue.modelo,
@@ -35,9 +58,16 @@ export class CadastroVeiculoComponent {
       clienteId: Number(formValue.clienteId)
     }
 
-    this.veiculoService.addVeiculo(novoVeiculo as any).subscribe(() => {
-      console.log("Veículo cadastrado!");
-      this.form.reset();
+    if(this.idEdicao) {
+      this.veiculoService.updateVeiculo(this.idEdicao, veiculo as any).subscribe(() => {
+      console.log("Veículo atualizado!");
+      this.router.navigate(['/veiculos']);
     });
+  } else {
+      this.veiculoService.addVeiculo(veiculo as any).subscribe(() => {
+        console.log("Veículo cadastrado!");
+        this.router.navigate(['/veiculos']);
+      });
+    }
   }
 }

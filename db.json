@@ -21,12 +21,12 @@
   ],
   "veiculos": [
     {
-      "id": "1",
-      "clienteId": 1,
-      "placa": "ABC-1234",
+      "placa": "ABC-12355",
       "marca": "Chevrolet",
       "modelo": "Camaro",
-      "ano": 2026
+      "ano": 2026,
+      "clienteId": 1,
+      "id": "1"
     },
     {
       "id": "2",
@@ -35,6 +35,14 @@
       "marca": "Ford",
       "modelo": "Mustang",
       "ano": 2023
+    },
+    {
+      "placa": "JHT-8186",
+      "marca": "Ford",
+      "modelo": "Fiesta",
+      "ano": 2016,
+      "clienteId": 3,
+      "id": "G_Yj__vTRvs"
     }
   ],
   "ordens": [],
