@@ -18,6 +18,18 @@ export class ClienteService {
   }
 
   getClientePorId(id: string){
-    return this.http.get<Cliente>(`${this.apiUrl}/${id}`)
+    return this.http.get<Cliente>(`${this.apiUrl}/${id}`);
+  }
+
+  addCliente(cliente: Cliente){
+    return this.http.post<Cliente>(this.apiUrl, cliente);
+  }
+
+  updateCliente(id:string, cliente: Cliente){
+    return this.http.put<Cliente>(`${this.apiUrl}/${id}`, cliente);
+  }
+
+  deleteCliente(id:string){
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

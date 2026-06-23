@@ -6,6 +6,8 @@
             <h3> {{ cliente.nome }}</h3>
             <p> {{cliente.email}}</p>
             <p> {{cliente.telefone}}</p>
+            <a [routerLink]="['/clientes', cliente.id, 'editar']">Editar</a>
+            <button (click)="excluirCliente(cliente.id)">Excluir</button>
         </div>
     }
 </div>

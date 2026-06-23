@@ -7,10 +7,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { VeiculosComponent } from './pages/veiculos/veiculos.component';
 import { NovaOrdemComponent } from './pages/nova-ordem/nova-ordem.component';
 import { CadastroVeiculoComponent } from './pages/cadastro-veiculo/cadastro-veiculo.component';
+import { CadastroClienteComponent } from './pages/cadastro-cliente/cadastro-cliente.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'clientes', component: ClientesComponent},
+    {path: 'clientes/novo', component: CadastroClienteComponent},
+    {path: 'clientes/:id/editar', component: CadastroClienteComponent},
     {path: 'veiculos', component: VeiculosComponent},
     {path: 'veiculos/novo', component: CadastroVeiculoComponent},
     {path: 'veiculos/:id', component: DetalheVeiculoComponent},
