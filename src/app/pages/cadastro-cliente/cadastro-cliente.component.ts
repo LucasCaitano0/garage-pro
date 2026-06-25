@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { ClienteService } from '../../services/cliente.service';
 
 @Component({
   selector: 'app-cadastro-cliente',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule],
   templateUrl: './cadastro-cliente.component.html',
   styleUrls: ['./cadastro-cliente.component.scss']
 })
@@ -14,9 +14,9 @@ export class CadastroClienteComponent implements OnInit{
   idEdicao: string | null = null
 
   form = new FormGroup({
-    nome: new FormControl(''),
-    telefone: new FormControl(''),
-    email: new FormControl('')
+    nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    telefone: new FormControl('', Validators.required),
+    email: new FormControl('',[Validators.required, Validators.email])
   })
   
   constructor(

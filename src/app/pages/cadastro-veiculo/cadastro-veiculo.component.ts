@@ -1,6 +1,6 @@
 import { Veiculo } from './../../models/veiculo.model';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { VeiculoService } from '../../services/veiculo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 

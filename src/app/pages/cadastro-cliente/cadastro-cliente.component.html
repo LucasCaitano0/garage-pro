@@ -1,16 +1,40 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" formControlName="nome">
-  </div>
-  <div>
-    <label for="telefone">Telefone:</label>
-    <input type="text" id="telefone" formControlName="telefone">
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" formControlName="email">
-  </div>
-  <button type="submit">Cadastrar</button>
-  
-</form>
+<div class="container-form">
+
+  <h1>Cadastrar Cliente</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" formControlName="nome">
+      @if (form.get('nome')?.invalid && form.get('nome')?.touched) {
+        <small class="erro">Nome é obrigatório</small>
+      }
+    </div>
+
+    <div>
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="telefone" formControlName="telefone">
+      @if (form.get('telefone')?.invalid && form.get('telefone')?.touched) {
+        <small class="erro">Telefone é obrigatório</small>
+      }
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+      @if (form.get('email')?.touched) {
+        @if (form.get('email')?.hasError('required')) {
+          <small class="erro">Email é obrigatório</small>
+        }
+        @if (form.get('email')?.hasError('email')) {
+          <small class="erro">Email inválido</small>
+        }
+      }
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Cadastrar</button>
+
+  </form>
+
+</div>
