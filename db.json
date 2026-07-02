@@ -45,6 +45,27 @@
       "id": "G_Yj__vTRvs"
     }
   ],
-  "ordens": [],
+  "ordens": [
+    {
+      "id": "1",
+      "veiculoId": "1",
+      "descricao": "Motor com barulho estranho",
+      "servicoRealizado": "Troca de correia dentada",
+      "mecanico": "Carlos Silva",
+      "status": "concluída",
+      "dataEntrada": "2026-07-01",
+      "valor": 450.00
+    },
+    {
+      "id": "2",
+      "veiculoId": "2",
+      "descricao": "Carro esquentando",
+      "servicoRealizado": "Troca de bomba d'agua",
+      "mecanico": "Junior Pereira",
+      "status": "em andamento",
+      "dataEntrada": "2026-07-02",
+      "valor": 320.00
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
