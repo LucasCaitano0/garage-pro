@@ -18,11 +18,11 @@ export class CadastroVeiculoComponent implements OnInit {
   idEdicao: string | null = null;
 
   form = new FormGroup({
-    placa: new FormControl(''),
-    marca: new FormControl(''),
-    modelo: new FormControl(''),
-    ano: new FormControl(''),
-    clienteId: new FormControl('')
+    placa: new FormControl('', [Validators.required]),
+    marca: new FormControl('', [Validators.required]),
+    modelo: new FormControl('', [Validators.required]),
+    ano: new FormControl('', [Validators.required]),
+    clienteId: new FormControl('', [Validators.required])
   });
 
   constructor(

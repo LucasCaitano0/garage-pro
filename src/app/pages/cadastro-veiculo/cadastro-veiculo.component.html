@@ -1,18 +1,41 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <label>Placa: </label>
-    <input formControlName="placa" />
+<div class="container-form">
+    <h1>Cadastrar Veículo</h1>
 
-    <label>Marca: </label>
-    <input formControlName="marca" />
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-    <label>Modelo: </label>
-    <input formControlName="modelo" />
+        <label for="placa">Placa: </label>
+        <input id="placa" formControlName="placa">
+            @if (form.get('placa')?.invalid && form.get('placa')?.touched) {
+            <small class="erro">placa é obrigatória</small>
+        }
 
-    <label>Ano: </label>
-    <input formControlName="ano" />
+        <label for="marca">Marca: </label>
+        <input id="marca" formControlName="marca" />
+            @if (form.get('marca')?.invalid && form.get('marca')?.touched) {
+            <small class="erro">marca é obrigatória</small>
+        }
 
-    <label>Cliente ID: </label>
-    <input formControlName="clienteId" />
+        <label for="modelo">Modelo: </label>
+        <input formControlName="modelo" id="modelo"/>
+            @if (form.get('modelo')?.invalid && form.get('modelo')?.touched) {
+            <small class="erro">modelo é obrigatório</small>
+        }
 
-    <button type="submit">Cadastrar</button>
-</form>
+        <label for="ano">Ano: </label>
+        <input formControlName="ano" id="ano"/>
+            @if (form.get('ano')?.invalid && form.get('ano')?.touched) {
+            <small class="erro">ano é obrigatório</small>
+        }
+
+        <label for="clienteId">Cliente ID: </label>
+        <input formControlName="clienteId" id="clienteId" />
+            @if (form.get('clienteId')?.invalid && form.get('clienteId')?.touched) {
+            <small class="erro">cliente ID é obrigatório</small>
+        }
+
+        <button type="submit" [disabled]="form.invalid">
+            {{ idEdicao ? 'Atualizar' : 'Cadastrar' }}
+        </button>
+    </form>
+
+</div>
